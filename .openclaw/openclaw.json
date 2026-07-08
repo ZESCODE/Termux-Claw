@@ -1,0 +1,38 @@
+{
+  "version": "2026.5",
+  "models": {
+    "providers": {
+      "9router": {
+        "baseUrl": "http://localhost:20128/v1",
+        "apiKey": "9router-token",
+        "api": "openai-completions",
+        "models": [
+          { "id": "gh/claude-sonnet-4.6", "name": "Claude Sonnet 4.6 (GitHub)" },
+          { "id": "deepseek-v4-flash", "name": "DeepSeek V4 Flash" },
+          { "id": "deepseek-v4-pro", "name": "DeepSeek V4 Pro" },
+          { "id": "claude-sonnet-4-20250514", "name": "Claude Sonnet 4 (Anthropic)" },
+          { "id": "groq/llama-3.3-70b", "name": "Llama 3.3 70B (Groq)" },
+          { "id": "gemini/gemini-2.5-flash", "name": "Gemini 2.5 Flash" }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "9router/gh/claude-sonnet-4.6" },
+      "models": {
+        "9router/gh/claude-sonnet-4.6": {},
+        "9router/deepseek-v4-flash": {},
+        "9router/claude-sonnet-4-20250514": {}
+      }
+    },
+    "list": [
+      {
+        "id": "zes-agent",
+        "name": "ZES Agent",
+        "agentDir": "/data/data/com.termux/files/home/.openclaw/agents/zes-agent",
+        "model": "9router/gh/claude-sonnet-4.6"
+      }
+    ]
+  }
+}
